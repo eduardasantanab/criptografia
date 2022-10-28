@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Cripto {
 
     public static boolean validaMensagem(String frase) {
-
         int tamanho = frase.length();
         boolean valida = false;
 
@@ -40,11 +39,10 @@ public class Cripto {
                         novaPos = alfabetoNum[pos] + desloc;
                         if (novaPos > 26) {
                             novaLetra = alfabetoLetra[novaPos - 26];
-                            break;
                         } else {
                             novaLetra = alfabetoLetra[novaPos];
-                            break;
                         }
+                        break;
                     }
                 } else if (Character.isSpaceChar(letra)) {
                     novaLetra = " ";
@@ -60,11 +58,10 @@ public class Cripto {
                         novaPos = (alfabetoNum[pos] - desloc);
                         if (novaPos < 0) {
                             novaLetra = alfabetoLetra[novaPos + 26];
-                            break;
                         } else {
                             novaLetra = alfabetoLetra[novaPos];
-                            break;
                         }
+                        break;
                     }
                 } else if (Character.isSpaceChar(letra)) {
                     novaLetra = " ";
@@ -88,7 +85,7 @@ public class Cripto {
             vetFrase[i] = alteraFrase(frase.charAt(i), desloc, 1);
         }
 
-        return Arrays.toString(vetFrase);  // return frase criptografada
+        return Arrays.toString(vetFrase);  //return frase criptografada
     }
 
     public static String decriptografa(String frase, int desloc) {
